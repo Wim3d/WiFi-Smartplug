@@ -459,7 +459,7 @@ String SendHTML() {
   ptr += "</style>\n";
   ptr += "</head>\n";
   ptr += "<body>\n";
-  ptr += "<h1>Sonoff Web Control</h1>\n";
+  ptr += "<h1>Smart plug Web Control</h1>\n";
   ptr += "<h3>Control of Relay, LED and link to HTTPWebUpdate</h3>\n";
   ptr += "<p>Sonoff WimIOT\nDevice: ";
   ptr += mqtt_id;
