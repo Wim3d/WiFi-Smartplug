@@ -1,0 +1,9 @@
+	Frame label="Timers"
+    {
+		Switch item=Switch8
+    	Text item=coffee_off_timer
+		Selection item=coffee_off_timer mappings=["1"="1 min", "20"="20 min", "120"="2 hour", "240"="4 hour"]
+		Switch item=Switch2
+    	Text item=charger_timer
+		Selection item=charger_timer mappings=["60"="60 min", "120"="2 hour", "240"="4 hour"]
+    }
