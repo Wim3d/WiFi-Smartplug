@@ -1,0 +1,23 @@
+// coffee machine
+rule "Coffee machine off timer"
+when
+	Item Switch8 changed to ON
+then
+	logInfo("Coffee machine","Coffee machine on, turning off in (min): " +coffee_off_timer.state.toString) 
+	coffeetimerval = createTimer(now.plusMinutes((coffee_off_timer.state as Number).intValue)) [|
+		coffeetimerval = null
+		Switch8.sendCommand(OFF)
+		logInfo("Coffee machine","Coffee machine off")
+	]
+end
+
+rule "cancel Coffee machine off timer"
+when
+	Item Switch8 changed to OFF
+then
+	if(coffeetimerval !== null) 
+	{
+		coffeetimerval.cancel()
+		logInfo("Coffee machine","Coffee machine switched off, timer canceled")
+	}
+end
