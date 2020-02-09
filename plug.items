@@ -1,0 +1,5 @@
+Switch Switch8 "Coffee switch 8" <poweroutlet_eu> (gSonoff, gSonoff_BG, gSonoff_power) [ "Outlet" ] {mqtt=">[mosquitto:BSD33_1/Relay_sw:command:*:default],<[mosquitto:BSD33_1/Relay_st:state:default]"}
+String Switch8_state "Coffee switch 8 BSD33 state [%s]" <poweroutlet_eu> (gSonoffState) {mqtt="<[mosquitto:BSD33_1/Relay_st:state:default]"}
+
+Number coffee_off_timer "Coffee machine off timer [%d]" <time> {mqtt="<[mosquitto:coffeemachine/offtimer:state:default]"}
+Number charger_timer "charger off timer [%d]" <time>
